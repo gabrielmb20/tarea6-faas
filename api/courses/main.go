@@ -52,50 +52,36 @@ var jsonData string = `[
 		"name": "English for Computer Science II",
 		"period": "II",
 		"year": 2020,
-		"group_id": 1,
-		"code": "ECSI-II",
-		"professor_id": 1,
-		"profname": "John Wile"
+		"groups": [
+			{
+				"group_id": 1,
+				"code": "ECSI-II"
+			}
+		],
+		"professors": [
+			{
+				"professor_id": 1,
+				"profname": "John Wile"
+			}
+		]		
 	},
 	{
 		"_id": 3,
 		"name": "English for Computer Science III",
 		"period": "II",
 		"year": 2020,
-		"group_id": 1,
-		"code": "ECSIII-PI",
-		"professor_id": 1,
-		"profname": "John Wile"
-	},
-	{
-		"_id": 4,
-		"name": "Programming I",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "ECSIII-PI",
-		"professor_id": 2,
-		"profname": "Mary Smith"
-	},
-	{
-		"_id": 5,
-		"name": "Programming II",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "PII-PIII",
-		"professor_id": 2,
-		"profname": "Mary Smith"
-	},
-	{
-		"_id": 6,
-		"name": "Programming III",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "PII-PIII",
-		"professor_id": 3,
-		"profname": "Joshua Marley"
+		"groups": [
+			{
+				"group_id": 1,
+				"code": "ECSIII-PI"
+			}
+		],
+		"professors": [
+			{
+				"professor_id": 1,
+				"profname": "John Wile"
+			}
+		]			
 	}
 ]`
 
