@@ -7,12 +7,12 @@ import (
 	"strconv"
 )
 
-type GroupRef struct {
+type GroupsRef struct {
 	GroupId int    `json:"group_id"`
 	Code  string `json:"code"`
 }
 
-type ProfessorRef struct {
+type ProfessorsRef struct {
 	ProfessorId int    `json:"professor_id"`
 	Name  string `json:"profname"`
 }
@@ -22,10 +22,10 @@ type Courses struct {
 	Name      string    `json:"name"`
 	Period string    `json:"period"`
 	Year   int       `json:"year"`
-	Group_Id      []GroupRef    `json:"group_id"`
-	Code       []GroupRef `json:"code"`
-	Professor_Id     []ProfessorRef    `json:"professor_id"`
-	Professor_Name      []ProfessorRef    `json:"profname"`
+	Group_Id      []GroupsRef    `json:"group_id"`
+	Code       []GroupsRef `json:"code"`
+	Professor_Id     []ProfessorsRef    `json:"professor_id"`
+	Professor_Name      []ProfessorsRef    `json:"profname"`
 }
 
 var items []Courses
