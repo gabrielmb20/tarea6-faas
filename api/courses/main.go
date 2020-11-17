@@ -8,12 +8,12 @@ import (
 )
 
 type GroupsRef struct {
-	GroupId int    `json:"groupid"`
+	GroupId int    `json:"group_id"`
 	Code  string `json:"code"`
 }
 
 type ProfessorsRef struct {
-	ProfessorId int    `json:"professorid"`
+	ProfessorId int    `json:"professor_id"`
 	Name  string `json:"profname"`
 }
 
@@ -22,10 +22,10 @@ type Courses struct {
 	Name      string    `json:"name"`
 	Period string    `json:"period"`
 	Year   int       `json:"year"`
-	GroupId      []GroupsRef    `json:"groupid"`
+	Group_Id      []GroupsRef    `json:"group_id"`
 	Code       []GroupsRef `json:"code"`
-	ProfessorId     []ProfessorsRef    `json:"professorid"`
-	ProfessorName      []ProfessorsRef    `json:"profname"`
+	Professor_Id     []ProfessorsRef    `json:"professor_id"`
+	Professor_Name      []ProfessorsRef    `json:"profname"`
 }
 
 var items []Courses
@@ -36,9 +36,9 @@ var jsonData string = `[
 		"name": "English for Computer Science I",
 		"period": "II",
 		"year": 2020,
-		"groupid": 1,
+		"group_id": 1,
 		"code": "ECSI-II",
-		"professorid": 4,
+		"professor_id": 4,
 		"profname": "Caroline Andrews"
 	},
 	{
@@ -46,9 +46,9 @@ var jsonData string = `[
 		"name": "English for Computer Science II",
 		"period": "II",
 		"year": 2020,
-		"groupid": 1,
+		"group_id": 1,
 		"code": "ECSI-II",
-		"professorid": 1,
+		"professor_id": 1,
 		"profname": "John Wile"
 	},
 	{
@@ -56,9 +56,9 @@ var jsonData string = `[
 		"name": "English for Computer Science III",
 		"period": "II",
 		"year": 2020,
-		"groupid": 1,
+		"group_id": 1,
 		"code": "ECSIII-PI",
-		"professorid": 1,
+		"professor_id": 1,
 		"profname": "John Wile"
 	},
 	{
@@ -66,9 +66,9 @@ var jsonData string = `[
 		"name": "Programming I",
 		"period": "II",
 		"year": 2020,
-		"groupid": 1,
+		"group_id": 1,
 		"code": "ECSIII-PI",
-		"professorid": 2,
+		"professor_id": 2,
 		"profname": "Mary Smith"
 	},
 	{
@@ -76,9 +76,9 @@ var jsonData string = `[
 		"name": "Programming II",
 		"period": "II",
 		"year": 2020,
-		"groupid": 1,
+		"group_id": 1,
 		"code": "PII-PIII",
-		"professorid": 2,
+		"professor_id": 2,
 		"profname": "Mary Smith"
 	},
 	{
@@ -86,9 +86,9 @@ var jsonData string = `[
 		"name": "Programming III",
 		"period": "II",
 		"year": 2020,
-		"groupid": 1,
+		"group_id": 1,
 		"code": "PII-PIII",
-		"professorid": 3,
+		"professor_id": 3,
 		"profname": "Joshua Marley"
 	}
 ]`
