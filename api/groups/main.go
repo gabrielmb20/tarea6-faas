@@ -7,93 +7,81 @@ import (
 	"strconv"
 )
 
-type GroupRef struct {
-	GroupId int    `json:"group_id"`
-	Code  string `json:"code"`
+
+type CoursesRef struct {
+	CourseId int    `json:"course_id"`
+	Name  string `json:"name"`
 }
 
-type ProfessorRef struct {
-	ProfessorId int    `json:"professor_id"`
-	Name  string `json:"profame"`
-}
-
-type Courses struct {
+type Groups struct {
 	Id          int       `json:"_id"`
-	Name      string    `json:"name"`
-	Period string    `json:"period"`
-	Year   int       `json:"year"`
-	Group_Id      []GroupRef    `json:"group_id"`
-	Code       []GroupRef `json:"code"`
-	Professor_Id     []ProfessorRef    `json:"professor_id"`
-	Professor_Name      []ProfessorRef    `json:"profname"`
+	Code      string    `json:"code"`
+	Location string    `json:"location"`
+	Courses      []CoursesRef    `json:"name"`
 }
 
-var items []Courses
+var items []Groups
 
 var jsonData string = `[
 	{
 		"_id": 1,
-		"name": "English for Computer Science I",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
 		"code": "ECSI-II",
-		"professor_id": 4,
-		"profname": "Caroline Andrews"
+		"location": "A101",
+		"courses": [
+			{
+				"course_id": 1,
+				"name": "English for Computer Science I"
+			},
+			{
+				"course_id": 2,
+				"name": "English for Computer Science II"
+			}
+		]
 	},
 	{
 		"_id": 2,
-		"name": "English for Computer Science II",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "ECSI-II",
-		"professor_id": 1,
-		"profname": "John Wile"
+		"code": "ECSIII-PI",
+		"location": "A102",
+		"courses": [
+			{
+				"course_id": 3,
+				"name": "English for Computer Science III"
+			},
+			{
+				"course_id": 4,
+				"name": "Programming I"
+			}
+		]
 	},
 	{
 		"_id": 3,
-		"name": "English for Computer Science III",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "ECSIII-PI",
-		"professor_id": 1,
-		"profname": "John Wile"
+		"code": "PII-PIII",
+		"location": "A103",
+		"courses": [
+			{
+				"course_id": 5,
+				"name": "Programming II"
+			},
+			{
+				"course_id": 6,
+				"name": "Programming III"
+			}
+		]
 	},
 	{
 		"_id": 4,
-		"name": "Programming I",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "ECSIII-PI",
-		"professor_id": 2,
-		"profname": "Mary Smith"
-	},
-	{
-		"_id": 5,
-		"name": "Programming II",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "PII-PIII",
-		"professor_id": 2,
-		"profname": "Mary Smith"
-	},
-	{
-		"_id": 6,
-		"name": "Programming III",
-		"period": "II",
-		"year": 2020,
-		"group_id": 1,
-		"code": "PII-PIII",
-		"professor_id": 3,
-		"profname": "Joshua Marley"
+		"code": "PI",
+		"location": "A104",
+		"courses": [
+			{
+				"course_id": 4,
+				"name": "Programming I"
+			}
+		]
 	}
 ]`
 
-func FindItem(id int) *Courses {
+func FindItem(id int) *Groups {
 	for _, item := range items {
 		if item.Id == id {
 			return &item
