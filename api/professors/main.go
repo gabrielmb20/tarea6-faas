@@ -17,7 +17,7 @@ type Professors struct {
 	Id          int       `json:"_id"`
 	Name      string    `json:"profname"`
 	Country string    `json:"country"`
-	Employee_code string    `json:"employee_code"`
+	Employee string    `json:"employee"`
 	Courses      []CoursesRef    `json:"courses"`
 }
 
@@ -28,7 +28,7 @@ var jsonData string = `[
 		"_id": 1,
 		"profname": "John Wile",
 		"country": "United States",
-		"employee_code": 1807,
+		"employee": 1807,
 		"courses": [
 			{
 				"course_id": 1,
@@ -48,7 +48,7 @@ var jsonData string = `[
 		"_id": 2,
 		"profname": "Mary Smith",
 		"country": "UK",
-		"employee_code": 2017,
+		"employee": 2017,
 		"courses": [
 			{
 				"course_id": 4,
@@ -64,7 +64,7 @@ var jsonData string = `[
 		"_id": 3,
 		"profname": "Joshua Marley",
 		"country": "CR",
-		"employee_code": 1203,
+		"employee": 1203,
 		"courses": [
 			{
 				"course_id": 6,
@@ -76,7 +76,7 @@ var jsonData string = `[
 		"_id": 4,
 		"profname": "Caroline Andrews",
 		"country": "UR",
-		"employee_code": 4392,
+		"employee": 4392,
 		"courses": [
 			{
 				"course_id": 1,
