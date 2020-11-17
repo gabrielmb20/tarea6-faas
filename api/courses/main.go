@@ -7,60 +7,93 @@ import (
 	"strconv"
 )
 
-type BookRef struct {
-	BookId int    `json:"book_id"`
-	Title  string `json:"title"`
+type GroupRef struct {
+	GroupId int    `json:"group_id"`
+	Code  string `json:"code"`
 }
 
-type Author struct {
+type ProfessorRef struct {
+	ProfessorId int    `json:"professor_id"`
+	Name  string `json:"profame"`
+}
+
+type Course struct {
 	Id          int       `json:"_id"`
-	Author      string    `json:"author"`
-	Nationality string    `json:"nationality"`
-	BirthYear   int       `json:"birth_year"`
-	Fields      string    `json:"fields"`
-	Books       []BookRef `json:"books"`
+	Name      string    `json:"name"`
+	Period string    `json:"period"`
+	Year   int       `json:"yeay"`
+	Group_Id      ]GroupRef    `json:"group_id"`
+	Group_Code       ]GroupRef `json:"code"`
+	Professor_Id      ]ProfessorRef    `json:"professor_id"`
+	Professor_Name      ]ProfessorRef    `json:"profname"`
 }
 
-var items []Author
+var items []Course
 
 var jsonData string = `[
 	{
 		"_id": 1,
-		"author": "Abraham Silberschatz",
-		"nationality": "Israelis / American",
-		"birth_year": 1952,
-		"fields": "Database Systems, Operating Systems",
-		"books": [
-			{
-				"book_id": 1,
-				"title": "Operating System Concepts"
-			},
-			{
-				"book_id": 2,
-				"title": "Database System Concepts"
-			}
-		]
+		"name": "English for Computer Science I",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSI-II",
+		"professor_id": 4,
+		"profname": "Caroline Andrews"
 	},
 	{
 		"_id": 2,
-		"author": "Andrew S. Tanenbaum",
-		"nationality": "Dutch / American",
-		"birth_year": 1944,
-		"fields": "Distributed computing, Operating Systems",
-		"books": [
-			{
-				"book_id": 3,
-				"title": "Computer Networks"
-			},
-			{
-				"book_id": 4,
-				"title": "Modern Operating Systems"
-			}
-		]
+		"name": "English for Computer Science II",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSI-II",
+		"professor_id": 1,
+		"profname": "John Wile"
+	},
+	{
+		"_id": 3,
+		"name": "English for Computer Science III",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSIII-PI",
+		"professor_id": 1,
+		"profname": "John Wile"
+	},
+	{
+		"_id": 4,
+		"name": "Programming I",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSIII-PI",
+		"professor_id": 2,
+		"profname": "Mary Smith"
+	},
+	{
+		"_id": 5,
+		"name": "Programming II",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "PII-PIII",
+		"professor_id": 2,
+		"profname": "Mary Smith"
+	},
+	{
+		"_id": 6,
+		"name": "Programming III",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "PII-PIII",
+		"professor_id": 3,
+		"profname": "Joshua Marley"
 	}
 ]`
 
-func FindItem(id int) *Author {
+func FindItem(id int) *Course {
 	for _, item := range items {
 		if item.Id == id {
 			return &item
