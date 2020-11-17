@@ -8,13 +8,13 @@ import (
 )
 
 type GroupsRef struct {
-	group_id int    `json:"group_id"`
-	code  string `json:"code"`
+	Group_id int    `json:"group_id"`
+	Code  string `json:"code"`
 }
 
 type ProfessorsRef struct {
-	professor_id int    `json:"professor_id"`
-	name  string `json:"profname"`
+	Professor_id int    `json:"professor_id"`
+	Name  string `json:"profname"`
 }
 
 type Courses struct {
@@ -22,10 +22,10 @@ type Courses struct {
 	Name      string    `json:"name"`
 	Period string    `json:"period"`
 	Year   int       `json:"year"`
-	group_id      []GroupsRef    `json:"group_id"`
-	code       []GroupsRef  `json:"code"`
-	professor_id     []ProfessorsRef    `json:"professor_id"`
-	profname      []ProfessorsRef    `json:"profname"`
+	Group_id      []GroupsRef    `json:"group_id"`
+	Code       []GroupsRef  `json:"code"`
+	Professor_id     []ProfessorsRef    `json:"professor_id"`
+	Profname      []ProfessorsRef    `json:"profname"`
 }
 
 var items []Courses
