@@ -8,12 +8,12 @@ import (
 )
 
 type GroupsRef struct {
-	Group_id int    `json:"group_id"`
+	GroupId int    `json:"group_id"`
 	Code  string `json:"code"`
 }
 
 type ProfessorsRef struct {
-	Professor_id int    `json:"professor_id"`
+	ProfessorId int    `json:"professors_id"`
 	Name  string `json:"profname"`
 }
 
@@ -24,7 +24,7 @@ type Courses struct {
 	Year   int       `json:"year"`
 	Group_id      []GroupsRef    `json:"group_id"`
 	Code       []GroupsRef  `json:"code"`
-	Professor_id     []ProfessorsRef    `json:"professor_id"`
+	Professor_id     []ProfessorsRef    `json:"professors_id"`
 	Profname      []ProfessorsRef    `json:"profname"`
 }
 
@@ -38,7 +38,7 @@ var jsonData string = `[
 		"year": 2020,
 		"group_id": 1,
 		"code": "ECSI-II",
-		"professor_id": 4,
+		"professors_id": 4,
 		"profname": "Caroline Andrews"
 	},
 	{
@@ -48,7 +48,7 @@ var jsonData string = `[
 		"year": 2020,
 		"group_id": 1,
 		"code": "ECSI-II",
-		"professor_id": 1,
+		"professors_id": 1,
 		"profname": "John Wile"
 	},
 	{
@@ -58,7 +58,7 @@ var jsonData string = `[
 		"year": 2020,
 		"group_id": 1,
 		"code": "ECSIII-PI",
-		"professor_id": 1,
+		"professors_id": 1,
 		"profname": "John Wile"
 	},
 	{
@@ -68,7 +68,7 @@ var jsonData string = `[
 		"year": 2020,
 		"group_id": 1,
 		"code": "ECSIII-PI",
-		"professor_id": 2,
+		"professors_id": 2,
 		"profname": "Mary Smith"
 	},
 	{
@@ -78,7 +78,7 @@ var jsonData string = `[
 		"year": 2020,
 		"group_id": 1,
 		"code": "PII-PIII",
-		"professor_id": 2,
+		"professors_id": 2,
 		"profname": "Mary Smith"
 	},
 	{
@@ -88,7 +88,7 @@ var jsonData string = `[
 		"year": 2020,
 		"group_id": 1,
 		"code": "PII-PIII",
-		"professor_id": 3,
+		"professors_id": 3,
 		"profname": "Joshua Marley"
 	}
 ]`
