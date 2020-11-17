@@ -34,14 +34,14 @@ var jsonData string = `[
 		"name": "English for Computer Science I",
 		"period": "II",
 		"year": 2020,
-		"groups": {
+		"groups": [{
 			group_id": 1,
 			"code": "ECSI-II"
-		},		
-		"professors": {
+		}],		
+		"professors": [{
 			"professor_id": 4,
 			"profname": "Caroline Andrews"
-		}				
+		}]				
 	}
 ]`
 
