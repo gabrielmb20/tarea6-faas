@@ -36,12 +36,12 @@ var jsonData string = `[
 		"year": 2020,
 		"groups": [{
 			group_id": 1,
-			"code": "ECSI-II"
-		}],		
+			"code": "ECSI-II",
+		},],		
 		"professors": [{
 			"professor_id": 4,
-			"profname": "Caroline Andrews"
-		}]				
+			"profname": "Caroline Andrews",
+		},]				
 	}
 ]`
 
