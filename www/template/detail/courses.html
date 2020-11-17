@@ -37,20 +37,20 @@
   </div> -->
 </form>
 
-<div>
-  <h5>Groups</h5>
-  <ul>
-  {{#groups}}
-    <li><a href="/groupById/?id={{group_id}}">{{code}}</li>
-  {{/groups}}
-  </ul>
-</div>
+<h5>Groups</h5>
+<ul>
+{{#groups}}
+  <li>
+    <a href="/groupById/?id={{group_id}}">{{code}}</a>
+  </li>
+{{/groups}}
+</ul>
 
-<div>
-  <h5>Professors</h5>
-  <ul>
-  {{#professors}}
-    <li><a href="/professorById/?id={{professor_id}}">{{profname}}</li>
-  {{/professors}}
-  </ul>
-</div>
+<h5>Professors</h5>
+<ul>
+{{#professors}}
+  <li>
+    <a href="/professorById/?id={{professor_id}}">{{profname}}</a>
+  </li>
+{{/professors}}
+</ul>
