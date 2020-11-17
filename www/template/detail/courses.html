@@ -1,32 +1,38 @@
-<h4 style="margin-top: 15px">{{ author }}</h4>
-<h5>Author's details</h5>
-
+<h4 style="margin-top: 15px">{{ title }}</h4>
+<h5>Course's details</h5>
 <form>
   <div class="row">
     <div class="six columns">
        <label for="idInput">ID</label>
-       <input class="u-full-width" id="_id" type="text" value="{{ _id }}" readonly/>
+       <input class="u-full-width" type="text" id="_id" value="{{ _id }}" readonly/>
     </div>
     <div class="six columns">
-       <label for="nationalityInput">Nationality</label>
-       <input class="u-full-width" id="nationality" type="text" value="{{ nationality }}" readonly/>
+       <label for="nameInput">Name</label>
+       <input class="u-full-width" type="text" id="name" value="{{ name }}" readonly/>
     </div>
   </div>
   <div class="row">
     <div class="six columns">
-       <label for="birthInput">Birth Year</label>
-       <input class="u-full-width" id="birth_year" type="text" value="{{ birth_year }}"  readonly/>
+       <label for="periodInput">Period</label>
+       <input class="u-full-width" type="text" id="period" value="{{period }}" readonly/>
     </div>
     <div class="six columns">
-       <label for="fieldsInput">Fields</label>
-       <input class="u-full-width" id="fields" type="text" value="{{ fields  }}"  readonly/>
+       <label for="yearInput">Year</label>
+       <input class="u-full-width" type="text" id="year" value="{{ year }}" readonly/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="six columns">
+       <label for=" groupInput">Group</label>
+       <a href="/groupById/?id={{ group_id }}">
+         <input class="u-full-width" type="button" id="code" value="{{ code }}" readonly/>
+       </a>
+    </div>
+    <div class="six columns">
+       <label for="professorInput">Professor</label>
+       <a href="professorById/?id={{ professor_id }}">
+         <input class="u-full-width" type="button" id="profname" value="{{ profname }}" readonly/>
+       </a>
     </div>
   </div>
 </form>
-
-<h5>Books</h5>
-<ul>
-{{#books}}
-  <li><a href="/bookById/?id={{book_id}}">{{title}}</li>
-{{/books}}
-</ul>

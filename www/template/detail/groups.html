@@ -1,38 +1,27 @@
-<h4 style="margin-top: 15px">{{ title }}</h4>
-<h5>Book's details</h5>
+<h4 style="margin-top: 15px">{{ group }}</h4>
+<h5>Group's details</h5>
+
 <form>
   <div class="row">
-    <div class="six columns">
+    <div class="three columns">
        <label for="idInput">ID</label>
-       <input class="u-full-width" type="text" id="_id" value="{{ _id }}" readonly/>
+       <input class="u-full-width" id="_id" type="text" value="{{ _id }}" readonly/>
     </div>
-    <div class="six columns">
-       <label for="copyrightInput">Copyright</label>
-       <input class="u-full-width" type="text" id="copyright" value="{{ copyright }}" readonly/>
+    <div class="three columns">
+       <label for="codeInput">Code</label>
+       <input class="u-full-width" id="code" type="text" value="{{ code }}" readonly/>
     </div>
-  </div>
-  <div class="row">
-    <div class="six columns">
-       <label for="editionInput">Edition</label>
-       <input class="u-full-width" type="text" id="edition" value="{{edition }}" readonly/>
-    </div>
-    <div class="six columns">
-       <label for="languageInput">Language</label>
-       <input class="u-full-width" type="text" id="language" value="{{ language }}" readonly/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="six columns">
-       <label for=" authorInput">Author</label>
-       <a href="/authorById/?id={{ author_id }}">
-         <input class="u-full-width" type="button" id=" author" value="{{ author }}" readonly/>
-       </a>
-    </div>
-    <div class="six columns">
-       <label for="languageInput">Publisher</label>
-       <a href="/publisherById/?id={{ publisher_id }}">
-         <input class="u-full-width" type="button" id="publisher" value="{{ publisher }}" readonly/>
-       </a>
-    </div>
+    <div class="three columns">
+      <label for="locationInput">Location</label>
+      <input class="u-full-width" id="location" type="text" value="{{ location }}" readonly/>
+    </div>  
+   
   </div>
 </form>
+
+<h5>Courses</h5>
+<ul>
+{{#courses}}
+  <li><a href="/courseById/?id={{course_id}}">{{name}}</li>
+{{/courses}}
+</ul>

@@ -1,6 +1,6 @@
-<h4 style="margin-top: 15px">{{ publisher }}</h4>
+<h4 style="margin-top: 15px">{{ professors }}</h4>
 
-<h5>Publisher's details</h5>
+<h5>Professors's details</h5>
 <form>
   <div class="row">
     <div class="six columns">
@@ -14,19 +14,19 @@
   </div>
   <div class="row">
     <div class="six columns">
-       <label for="foundedInput">Founded</label>
-       <input class="u-full-width" id="founded" type="text" value="{{ founded }}"  readonly/>
+       <label for="profnameInput">Name</label>
+       <input class="u-full-width" id="profname" type="text" value="{{ profname }}"  readonly/>
     </div>
     <div class="six columns">
-       <label for="genereInput">Genere</label>
-       <input class="u-full-width" id="genere" type="text" value="{{ genere }}"  readonly/>
+       <label for="employee_codeInput">Code</label>
+       <input class="u-full-width" id="employee_code" type="text" value="{{ employee_code  }}"  readonly/>
     </div>
   </div>
 </form>
 
-<h5>Books</h5>
+<h5>Courses</h5>
 <ul>
-{{#books}}
-  <li><a href="/bookById/?id={{book_id}}">{{title}}</li>
-{{/books}}
+{{#courses}}
+  <li><a href="/courseById/?id={{course_id}}">{{name}}</li>
+{{/courses}}
 </ul>
