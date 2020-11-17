@@ -21,7 +21,7 @@
        <input class="u-full-width" type="text" id="year" value="{{ year }}" readonly/>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="six columns">
        <label for=" groupInput">Group</label>
        <a href="/groupById/?id={{ group_id }}">
@@ -34,5 +34,12 @@
          <input class="u-full-width" type="button" id="professor_id" value="{{ professor_id }}" readonly/>
        </a>
     </div>
-  </div>
+  </div> -->
 </form>
+
+<h5>Groups</h5>
+<ul>
+{{#groups}}
+  <li><a href="/groupById/?id={{group_id}}">{{code}}</li>
+{{/groups}}
+</ul>
