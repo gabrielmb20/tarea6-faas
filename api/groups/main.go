@@ -17,7 +17,7 @@ type Groups struct {
 	Id          int       `json:"_id"`
 	Code      string    `json:"code"`
 	Location string    `json:"location"`
-	Courses      []CoursesRef    `json:"name"`
+	Courses      []CoursesRef    `json:"courses"`
 }
 
 var items []Groups
