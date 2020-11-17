@@ -113,7 +113,6 @@ var jsonData string = `[
 			"profname": "Joshua Marley"
 		}]				
 	}
-
 ]`
 
 func FindItem(id int) *Courses {
