@@ -14,7 +14,7 @@ type GroupRef struct {
 
 type ProfessorRef struct {
 	ProfessorId int    `json:"professor_id"`
-	Name  string `json:"profame"`
+	Name  string `json:"profname"`
 }
 
 type Courses struct {
