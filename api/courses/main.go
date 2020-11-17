@@ -35,13 +35,13 @@ var jsonData string = `[
 		"period": "II",
 		"year": 2020,
 		"groups": [{
-			group_id": 1,
-			"code": "ECSI-II",
-		},],		
+			"group_id": 1,
+			"code": "ECSI-II"
+		}],		
 		"professors": [{
 			"professor_id": 4,
-			"profname": "Caroline Andrews",
-		},]				
+			"profname": "Caroline Andrews"
+		}]				
 	}
 ]`
 
