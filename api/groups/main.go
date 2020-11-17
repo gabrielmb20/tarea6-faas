@@ -7,76 +7,96 @@ import (
 	"strconv"
 )
 
-type Book struct {
-	Id           int    `json:"_id"`
-	Title        string `json:"title"`
-	Edition      string `json:"edition"`
-	Copyright    int    `json:"copyright"`
-	Language     string `json:"language"`
-	Pages        int    `json:"pages"`
-	Author       string `json:"author"`
-	Author_Id    int    `json:"author_id"`
-	Publisher    string `json:"publisher"`
-	Publisher_Id int    `json:"publisher_id"`
+type GroupRef struct {
+	GroupId int    `json:"group_id"`
+	Code  string `json:"code"`
 }
 
-var books []Book
+type ProfessorRef struct {
+	ProfessorId int    `json:"professor_id"`
+	Name  string `json:"profame"`
+}
+
+type Courses struct {
+	Id          int       `json:"_id"`
+	Name      string    `json:"name"`
+	Period string    `json:"period"`
+	Year   int       `json:"year"`
+	Group_Id      []GroupRef    `json:"group_id"`
+	Code       []GroupRef `json:"code"`
+	Professor_Id     []ProfessorRef    `json:"professor_id"`
+	Professor_Name      []ProfessorRef    `json:"profname"`
+}
+
+var items []Courses
 
 var jsonData string = `[
 	{
 		"_id": 1,
-		"title": "Operating System Concepts",
-		"edition": "9th",
-		"copyright": 2012,
-		"language": "ENGLISH",
-		"pages": 976,
-		"author": "Abraham Silberschatz",
-		"author_id": 1,
-		"publisher": "John Wiley & Sons",
-		"publisher_id": 1
+		"name": "English for Computer Science I",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSI-II",
+		"professor_id": 4,
+		"profname": "Caroline Andrews"
 	},
 	{
 		"_id": 2,
-		"title": "Database System Concepts",
-		"edition": "6th",
-		"copyright": 2010,
-		"language": "ENGLISH",
-		"pages": 1376,
-		"author": "Abraham Silberschatz",
-		"author_id": 1,
-		"publisher": "John Wiley & Sons",
-		"publisher_id": 1
+		"name": "English for Computer Science II",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSI-II",
+		"professor_id": 1,
+		"profname": "John Wile"
 	},
 	{
 		"_id": 3,
-		"title": "Computer Networks",
-		"edition": "5th",
-		"copyright": 2010,
-		"language": "ENGLISH",
-		"pages": 960,
-		"author": "Andrew S. Tanenbaum",
-		"author_id": 2,
-		"publisher": "Pearson Education",
-		"publisher_id": 2
+		"name": "English for Computer Science III",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSIII-PI",
+		"professor_id": 1,
+		"profname": "John Wile"
 	},
 	{
 		"_id": 4,
-		"title": "Modern Operating Systems",
-		"edition": "4th",
-		"copyright": 2014,
-		"language": "ENGLISH",
-		"pages": 1136,
-		"author": "Andrew S. Tanenbaum",
-		"author_id": 2,
-		"publisher": "Pearson Education",
-		"publisher_id": 2
+		"name": "Programming I",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "ECSIII-PI",
+		"professor_id": 2,
+		"profname": "Mary Smith"
+	},
+	{
+		"_id": 5,
+		"name": "Programming II",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "PII-PIII",
+		"professor_id": 2,
+		"profname": "Mary Smith"
+	},
+	{
+		"_id": 6,
+		"name": "Programming III",
+		"period": "II",
+		"year": 2020,
+		"group_id": 1,
+		"code": "PII-PIII",
+		"professor_id": 3,
+		"profname": "Joshua Marley"
 	}
 ]`
 
-func FindBook(id int) *Book {
-	for _, book := range books {
-		if book.Id == id {
-			return &book
+func FindItem(id int) *Courses {
+	for _, item := range items {
+		if item.Id == id {
+			return &item
 		}
 	}
 	return nil
@@ -86,13 +106,13 @@ func handler(req events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse
 	id := req.QueryStringParameters["id"]
 	var data []byte
 	if id == "" {
-		data, _ = json.Marshal(books)
+		data, _ = json.Marshal(items)
 	} else {
 		param, err := strconv.Atoi(id)
 		if err == nil {
-			book := FindBook(param)
-			if book != nil {
-				data, _ = json.Marshal(*book)
+			item := FindItem(param)
+			if item != nil {
+				data, _ = json.Marshal(*item)
 			} else {
 				data = []byte("error\n")
 			}
@@ -107,6 +127,6 @@ func handler(req events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse
 }
 
 func main() {
-	_ = json.Unmarshal([]byte(jsonData), &books)
+	_ = json.Unmarshal([]byte(jsonData), &items)
 	lambda.Start(handler)
 }
