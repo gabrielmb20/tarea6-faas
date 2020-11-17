@@ -7,60 +7,86 @@ import (
 	"strconv"
 )
 
-type BookRef struct {
-	BookId int    `json:"book_id"`
-	Title  string `json:"title"`
+
+type CoursesRef struct {
+	CourseId int    `json:"course_id"`
+	Name  string `json:"name"`
 }
 
-type Publisher struct {
-	Id        int       `json:"_id"`
-	Publisher string    `json:"publisher"`
-	Country   string    `json:"country"`
-	Founded   int       `json:"founded"`
-	Genere    string    `json:"genere"`
-	Books     []BookRef `json:"books"`
+type Professors struct {
+	Id          int       `json:"_id"`
+	Name      string    `json:"profname"`
+	Country string    `json:"country"`
+	Employee_Code string    `json:"employee_code"`
+	Courses      []CoursesRef    `json:"courses"`
 }
 
-var items []Publisher
+var items []Professors
 
 var jsonData string = `[
 	{
 		"_id": 1,
-		"publisher": "John Wiley & Sons",
+		"profname": "John Wile",
 		"country": "United States",
-		"founded": 1807,
-		"genere": "Academic",
-		"books": [
+		"employee_code": 1807,
+		"courses": [
 			{
-				"book_id": 1,
-				"title": "Operating System Concepts"
+				"course_id": 1,
+				"name": "English for Computer Science I"
 			},
 			{
-				"book_id": 2,
-				"title": "Database System Concepts"
+				"course_id": 2,
+				"name": "English for Computer Science II"
+			},
+			{
+				"course_id": 3,
+				"name": "English for Computer Science III"
 			}
 		]
 	},
 	{
 		"_id": 2,
-		"publisher": "Pearson Education",
-		"country": "United Kingdom",
-		"founded": 1844,
-		"genere": "Education",
-		"books": [
+		"profname": "Mary Smith",
+		"country": "UK",
+		"employee_code": 2017,
+		"courses": [
 			{
-				"book_id": 3,
-				"title": "Computer Networks"
+				"course_id": 4,
+				"name": "Programming I"
 			},
 			{
-				"book_id": 4,
-				"title": "Modern Operating Systems"
+				"course_id": 5,
+				"name": "Programming II"
+			}
+		]
+	},
+	{
+		"_id": 3,
+		"profname": "Joshua Marley",
+		"country": "CR",
+		"employee_code": 1203,
+		"courses": [
+			{
+				"course_id": 6,
+				"name": "Programming III"
+			}
+		]
+	},
+	{
+		"_id": 4,
+		"profname": "Caroline Andrews",
+		"country": "UR",
+		"employee_code": 4392,
+		"courses": [
+			{
+				"course_id": 1,
+				"name": "English for Computer Science I"
 			}
 		]
 	}
 ]`
 
-func FindItem(id int) *Publisher {
+func FindItem(id int) *Professors {
 	for _, item := range items {
 		if item.Id == id {
 			return &item
