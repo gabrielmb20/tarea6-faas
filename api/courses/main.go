@@ -34,54 +34,14 @@ var jsonData string = `[
 		"name": "English for Computer Science I",
 		"period": "II",
 		"year": 2020,
-		"groups": [
-			{
-				group_id": 1,
-				"code": "ECSI-II"
-			}
-		],
-		"professors": [
-			{
-				"professor_id": 4,
-				"profname": "Caroline Andrews"
-			}
-		]		
-	},
-	{
-		"_id": 2,
-		"name": "English for Computer Science II",
-		"period": "II",
-		"year": 2020,
-		"groups": [
-			{
-				"group_id": 1,
-				"code": "ECSI-II"
-			}
-		],
-		"professors": [
-			{
-				"professor_id": 1,
-				"profname": "John Wile"
-			}
-		]		
-	},
-	{
-		"_id": 3,
-		"name": "English for Computer Science III",
-		"period": "II",
-		"year": 2020,
-		"groups": [
-			{
-				"group_id": 1,
-				"code": "ECSIII-PI"
-			}
-		],
-		"professors": [
-			{
-				"professor_id": 1,
-				"profname": "John Wile"
-			}
-		]			
+		"groups": {
+			group_id": 1,
+			"code": "ECSI-II"
+		},		
+		"professors": {
+			"professor_id": 4,
+			"profname": "Caroline Andrews"
+		}				
 	}
 ]`
 
