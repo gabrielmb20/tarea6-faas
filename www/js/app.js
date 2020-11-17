@@ -37,7 +37,7 @@ function home() {
 function init() {
 	router = new Navigo(null, false, '#!');
 	router.on({
-		'/courses': function() {
+		'/courss': function() {
 			getAll('courses');
 		},
 		'/groups': function() {
