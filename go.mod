@@ -1,4 +1,4 @@
-module github.com/arce/faas
+module github.com/gabrielmb20/tarea6-faas
 
 go 1.13
 

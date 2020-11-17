@@ -28,7 +28,7 @@ type Course struct {
 	Professor_Name      ]ProfessorRef    `json:"profname"`
 }
 
-var items []Course
+var items []Courses
 
 var jsonData string = `[
 	{
@@ -93,7 +93,7 @@ var jsonData string = `[
 	}
 ]`
 
-func FindItem(id int) *Course {
+func FindItem(id int) *Courses {
 	for _, item := range items {
 		if item.Id == id {
 			return &item
