@@ -17,11 +17,11 @@ type ProfessorRef struct {
 	Name  string `json:"profame"`
 }
 
-type Course struct {
+type Courses struct {
 	Id          int       `json:"_id"`
 	Name      string    `json:"name"`
 	Period string    `json:"period"`
-	Year   int       `json:"yeay"`
+	Year   int       `json:"year"`
 	Group_Id      ]GroupRef    `json:"group_id"`
 	Group_Code       ]GroupRef `json:"code"`
 	Professor_Id      ]ProfessorRef    `json:"professor_id"`
