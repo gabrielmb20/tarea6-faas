@@ -23,7 +23,7 @@ type Courses struct {
 	Period string    `json:"period"`
 	Year   int       `json:"year"`
 	Group_Id      []GroupsRef    `json:"group_id"`
-	Code       []GroupsRef `json:"code"`
+	Code       []GroupsRef  `json:"code"`
 	Professor_Id     []ProfessorsRef    `json:"professor_id"`
 	Professor_Name      []ProfessorsRef    `json:"profname"`
 }
