@@ -42,7 +42,78 @@ var jsonData string = `[
 			"professor_id": 4,
 			"profname": "Caroline Andrews"
 		}]				
+	},
+	{
+		"_id": 2,
+		"name": "English for Computer Science II",
+		"period": "II",
+		"year": 2020,
+		"groups": [{
+			"group_id": 1,
+			"code": "ECSI-II"
+		}],		
+		"professors": [{
+			"professor_id": 1,
+			"profname": "John Wile"
+		}]				
+	},
+	{
+		"_id": 3,
+		"name": "English for Computer Science III",
+		"period": "II",
+		"year": 2020,
+		"groups": [{
+			"group_id": 2,
+			"code": "ECSIII-PI"
+		}],		
+		"professors": [{
+			"professor_id": 1,
+			"profname": "John Wile"
+		}]				
+	},
+	{
+		"_id": 4,
+		"name": "Programming I",
+		"period": "II",
+		"year": 2020,
+		"groups": [{
+			"group_id": 2,
+			"code": "ECSIII-PI"
+		}],		
+		"professors": [{
+			"professor_id": 2,
+			"profname": "Mary Smith"
+		}]				
+	},
+	{
+		"_id": 5,
+		"name": "Programming II",
+		"period": "II",
+		"year": 2020,
+		"groups": [{
+			"group_id": 3,
+			"code": "PII-PIII"
+		}],		
+		"professors": [{
+			"professor_id": 2,
+			"profname": "Mary Smith"
+		}]				
+	},
+	{
+		"_id": 6,
+		"name": "Programming III",
+		"period": "II",
+		"year": 2020,
+		"groups": [{
+			"group_id": 3,
+			"code": "PII-PIII"
+		}],		
+		"professors": [{
+			"professor_id": 3,
+			"profname": "Joshua Marley"
+		}]				
 	}
+
 ]`
 
 func FindItem(id int) *Courses {
