@@ -17,7 +17,7 @@ type Professors struct {
 	Id          int       `json:"_id"`
 	Name      string    `json:"profname"`
 	Country string    `json:"country"`
-	Employee string    `json:"employee"`
+	Employee int    `json:"employee"`
 	Courses      []CoursesRef    `json:"courses"`
 }
 
